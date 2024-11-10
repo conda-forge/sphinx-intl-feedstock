@@ -1,31 +1,32 @@
 {% set name = "sphinx-intl" %}
-{% set version = "2.2.0" %}
-
+{% set version = "2.3.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 66976a85d31624dfcb564059a6918f90b31669269bfe3f30b2d72e81f225ab20
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/sphinx_intl-{{ version }}.tar.gz
+  sha256: 4ddc63be820c94e23393538cc3d4c31631acab7001b0052e4530ff5bf623af97
 
 build:
-  number: 0
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - sphinx-intl = sphinx_intl.commands:main
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
 
 requirements:
   host:
-    - pip
-    - python >=3.7
-  run:
-    - babel
-    - click
-    - python >=3.7
+    - python {{ python_min }}
     - setuptools
+    - wheel
+    - pip
+  run:
+    - python >={{ python_min }}
+    - setuptools
+    - click
+    - babel
     - sphinx
 
 test:
@@ -35,6 +36,7 @@ test:
     - pip check
     - sphinx-intl --help
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
