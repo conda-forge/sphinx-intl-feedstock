@@ -1,5 +1,5 @@
 {% set name = "sphinx-intl" %}
-{% set version = "2.3.0" %}
+{% set version = "2.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/sphinx_intl-{{ version }}.tar.gz
-  sha256: 4ddc63be820c94e23393538cc3d4c31631acab7001b0052e4530ff5bf623af97
+  sha256: e2d04b907f57a029d46b4da344fd791e660d935eab6ced8a274fc65446389af1
 
 build:
   entry_points:
