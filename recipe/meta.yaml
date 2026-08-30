@@ -1,13 +1,13 @@
 {% set name = "sphinx-intl" %}
-{% set version = "2.3.2" %}
+{% set version = "2.4.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/sphinx_intl-{{ version }}.tar.gz
-  sha256: 04b0d8ea04d111a7ba278b17b7b3fe9625c58b6f8ffb78bb8a1dd1288d88c1c7
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/sphinx_intl-{{ version }}.tar.gz
+  sha256: f13173bfc4a131f74ea082a5820386e2bcdc020b3003378b029d438f404edbde
 
 build:
   entry_points:
